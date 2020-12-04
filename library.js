@@ -1,4 +1,10 @@
-const libraryJs = (() => {
+const {
+  myLibrary,
+  Book,
+  bookCard,
+  addBookToLibrary,
+  readBookToggler,
+} = (() => {
   const myLibrary = [];
 
   class Book {

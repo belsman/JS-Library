@@ -1,7 +1,3 @@
-const {
-  myLibrary, Book, bookCard, addBookToLibrary, readBookToggler,
-} = libraryJs;
-
 const visibility = (e) => {
   const { bookForm } = document.forms;
   e.target.classList.add('hide-form');
