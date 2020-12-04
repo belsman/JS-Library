@@ -1,7 +1,35 @@
+#booksContainer {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.book-card {
+  padding: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.book-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
 .show-form {
   display: block;
 }
 
 .hide-form {
   display: none;
+}
+
+.remove-btn {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  border: none;
+  background-color: inherit;
+}
+
+i.trash-icon {
+  color: red;
 }
