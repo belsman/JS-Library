@@ -1,39 +1,41 @@
-const {myLibrary, Book, bookCard, addBookToLibrary, readBookToggler} = libraryJs;
+const {
+  myLibrary, Book, bookCard, addBookToLibrary, readBookToggler,
+} = libraryJs;
 
 const visibility = (e) => {
-    const { bookForm } = document.forms;
-    e.target.classList.add('hide-form');
-    bookForm.classList.remove('hide-form');
-    bookForm.classList.add('show-form');
-  };
-  
-const displayBooks = () => {
-    let booksList = '';
-
-    const removeBookFromLibrary = (e) => {
-        const { bookIndex } = e.target.dataset;
-        myLibrary.splice(bookIndex, 1);
-        displayBooks();
-    };
-
-    myLibrary.forEach((book, bookIndex) => {
-        booksList += bookCard(book, bookIndex);
-    });
-
-    const booksContainer = document.getElementById('booksContainer');
-    booksContainer.innerHTML = booksList;
-
-    const removeBookButtons = document.querySelectorAll('.remove-btn');
-    removeBookButtons.forEach((btn) => {
-    btn.addEventListener('click', removeBookFromLibrary);
-});
-
-const readTogglers = document.querySelectorAll('.toggle-read');
-    readTogglers.forEach((btn) => {
-        btn.addEventListener('click', readBookToggler);
-    });
+  const { bookForm } = document.forms;
+  e.target.classList.add('hide-form');
+  bookForm.classList.remove('hide-form');
+  bookForm.classList.add('show-form');
 };
-  
+
+const displayBooks = () => {
+  let booksList = '';
+
+  const removeBookFromLibrary = (e) => {
+    const { bookIndex } = e.target.dataset;
+    myLibrary.splice(bookIndex, 1);
+    displayBooks();
+  };
+
+  myLibrary.forEach((book, bookIndex) => {
+    booksList += bookCard(book, bookIndex);
+  });
+
+  const booksContainer = document.getElementById('booksContainer');
+  booksContainer.innerHTML = booksList;
+
+  const removeBookButtons = document.querySelectorAll('.remove-btn');
+  removeBookButtons.forEach((btn) => {
+    btn.addEventListener('click', removeBookFromLibrary);
+  });
+
+  const readTogglers = document.querySelectorAll('.toggle-read');
+  readTogglers.forEach((btn) => {
+    btn.addEventListener('click', readBookToggler);
+  });
+};
+
 const main = () => {
   displayBooks();
 

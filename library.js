@@ -40,6 +40,6 @@ const libraryJs = (() => {
     Book,
     bookCard,
     addBookToLibrary,
-    readBookToggler
+    readBookToggler,
   };
 })();
